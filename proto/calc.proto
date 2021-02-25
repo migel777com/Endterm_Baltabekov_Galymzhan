@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "CalculatorService/proto";
+
+message PrimeDecomposeRequest{
+  int32 number = 1;
+}
+
+message PrimeDecomposeResponse{
+  int32 number = 1;
+}
+
+message AverageRequest{
+  double number = 1;
+}
+
+message AverageRespond{
+  double number = 1;
+}
+
+service CalcService{
+    rpc PrimeDecomposition(PrimeDecomposeRequest) returns (stream PrimeDecomposeResponse);
+
+    rpc AverageCalculator(stream AverageRequest) returns (AverageRespond);
+}
