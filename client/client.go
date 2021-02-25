@@ -47,7 +47,7 @@ LOOP:
 }
 
 
-func getAverage(c proto.CalcService_AverageCalculatorClient) {
+func getAverage(c proto.CalcServiceClient) {
 
 	requests := []*proto.AverageRequest{
 		{
